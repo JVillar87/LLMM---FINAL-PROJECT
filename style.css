@@ -323,71 +323,71 @@ nav a:hover {
 }
 
 .card-back.back-img-1 {
-    background-image: url('/assets/airport2.jpeg');
+    background-image: url('./assets/airport2.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .front-img-2 {
-    background-image: url('/assets/santuarios1.jpeg');
+    background-image: url('./assets/santuarios1.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .card-back.back-img-2 {
-    background-image: url('/assets/santuarios2.jpg');
+    background-image: url('./assets/santuarios2.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .front-img-3 {
-    background-image: url('/assets/shinkansen0.jpg');
+    background-image: url('./assets/shinkansen0.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .card-back.back-img-3 {
     background-color: transparent;
-    background-image: url('/assets/shinkansen1.jpg');
+    background-image: url('./assets/shinkansen1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .front-img-4 {
-    background-image: url('/assets/diving1.jpg');
+    background-image: url('./assets/diving1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .card-back.back-img-4 {
     background-color: transparent;
-    background-image: url('/assets/diving2.jpeg');
+    background-image: url('./assets/diving2.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .front-img-5 {
-    background-image: url('/assets/camping1.jpg');
+    background-image: url('./assets/camping1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .card-back.back-img-5 {
     background-color: transparent;
-    background-image: url('/assets/camping2.jpeg');
+    background-image: url('./assets/camping2.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .front-img-6 {
-    background-image: url('/assets/atracciones1.jpg');
+    background-image: url('./assets/atracciones1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .card-back.back-img-6 {
     background-color: transparent;
-    background-image: url('/assets/atracciones2.jpg');
+    background-image: url('./assets/atracciones2.jpg');
     background-size: cover;
     background-position: center;
 }
