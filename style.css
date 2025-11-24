@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Sedgwick+Ave+Display&display=swap');
+
+:root {
+    --bg: #880c0c;
+    --text-light: #fff;
+    --text-dark: #333;
+}
+
+* {
+    --bg: #880c0c;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 100px 1fr 1fr 50px;
+        grid-template-areas:
+            "header header"
+            "nav    main"
+            "nav    main"
+            "cards aside"
+            "footer footer";
+        column-gap: 10px;
+        row-gap: 5px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    background: linear-gradient(180deg, var(--bg), #880c0c 80%);
+    color: #e6eef8;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+}
+
+/* == TÍTULO Y LOGO == */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: var(--bg);
+    color: var(--text-light);
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    justify-content: center;
+}
+
+header h1 {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 7rem;
+    text-align: center;
+}
+
+/* == NAVEGACIÓN == */
+
+nav {
+    background-color: #880c0c;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+}
+
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: color 0.3s;
+}
+
+/* == BUSCADOR WEB == */
+
+.search-box {
+    position: relative;
+}
+
+.search-box input[type="text"] {
+    padding: 0.4rem 2.2rem 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    transition: box-shadow 0.2s;
+}
+
+.search-box input[type="text"]:focus {
+    box-shadow: 0 0 0 2px #61dafb;
+}
+
+.search-box button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+}
+
+.search-box button:hover {
+    color: #007acc;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* == CARRUSEL IMÁGENES == */
+
+#carrusel-ticker {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.carousel-ticker {
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+
+}
+
+.slides-ticker {
+    display: flex;
+    width: calc(8 * 25%);
+    /* 8 imágenes, cada una 25% */
+    animation: tickerMove 20s linear infinite;
+}
+
+.slide-ticker {
+    flex: 0 0 25%;
+    /* Cada imagen ocupa 25% del contenedor */
+}
+
+.slide-ticker img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes tickerMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+    /*Mueve la mitad del total (4 imágenes) */
+}
+
+
+
+/* == CARDS (ARTICULOS) == */
+
+.container-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 10px;
+}
+
+.feature-card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.feature-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backface-visibility: hidden;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   
+
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    
+}
+
+.card-back .text-panel {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 10px;
+    max-height: 80%;
+    overflow-y: auto;
+    text-align: center;
+
+    
+}
+
+.card-back .text-panel p,
+.card-back .text-panel h3 {
+    color: white;
+    margin: 5px 0;
+    
+    
+}
+
+.card-front h3,
+.card-back h3 {
+    text-align: center;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    font-size: 1.3rem;
+}
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.front-img-1 {
+    background-image: url('/assets/airport1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back.back-img-1 {
+    background-image: url('/assets/airport2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.front-img-2 {
+    background-image: url('/assets/santuarios1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back.back-img-2 {
+    background-image: url('/assets/santuarios2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.front-img-3 {
+    background-image: url('/assets/shinkansen0.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back.back-img-3 {
+    background-color: transparent;
+    background-image: url('/assets/shinkansen1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.front-img-4 {
+    background-image: url('/assets/diving1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back.back-img-4 {
+    background-color: transparent;
+    background-image: url('/assets/diving2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.front-img-5 {
+    background-image: url('/assets/camping1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back.back-img-5 {
+    background-color: transparent;
+    background-image: url('/assets/camping2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.front-img-6 {
+    background-image: url('/assets/atracciones1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back.back-img-6 {
+    background-color: transparent;
+    background-image: url('/assets/atracciones2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* == FORMULARIO CONTACTO == */
+
+.contact-aside {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #880c0c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+
+.contact-aside h2 {
+    width: 250px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: "Roboto";
+    text-align: center;
+}
+
+.contact-form p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 14px;
+
+}
+
+.contact-form textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    resize: vertical;
+    height: 100px;
+}
+
+.contact-form button {
+    background-color: #880c0c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    width: 100%;
+    background-color: #c2410c;
+}
+
+
+
+/* == FOOTER == */
+footer {
+    background-color: #550808;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-top: auto;
+
+}
+
+
+/* == AJUSTES TABLET/MOVIL == */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 768px) {
+    .container-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+    .contact-aside {
+        max-width: 90%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+
+/* Tablets medianas */
+@media screen and (max-width: 1024px) {
+    /* .slide-ticker img {
+        width: 250px; */
+}
+
+.features {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}

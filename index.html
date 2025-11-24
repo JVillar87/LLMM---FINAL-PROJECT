@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final LLMM (1ª evaluación)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:wght@400;500&family=Sedgwick+Ave+Display&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="overlay">
+            <img src="/assets/CrossAsia Hub(1).png" alt="Logotipo" class="logo">
+            <h1>CROSS ASIA HUB</h1>
+        </div>
+    </header>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="nuestra historia.html" target="blank">Nuestra Historia</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <form class="search-box" action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" name="q" placeholder="Buscar en la web..." />
+                <button type="submit">🔍</button>
+            </form>
+            </div>
+
+        </ul>
+    </nav>
+
+    <!-- CARRUSEL -->
+    <section id="carrusel-ticker">
+        <div class="carousel-ticker">
+            <div class="slides-ticker">
+                <div class="slide-ticker"><img src="/assets/Japan1.jpg" alt="Imagen 1"></div>
+                <div class="slide-ticker"><img src="/assets/China2.jpg" alt="Imagen 2"></div>
+                <div class="slide-ticker"><img src="/assets/Singapur2.jpg" alt="Imagen 3"></div>
+                <div class="slide-ticker"><img src="/assets/Thailand3.jpg" alt="Imagen 4"></div>
+                <div class="slide-ticker"><img src="/assets/Japan1.jpg" alt="Imagen 1"></div>
+                <div class="slide-ticker"><img src="/assets/China2.jpg" alt="Imagen 2"></div>
+                <div class="slide-ticker"><img src="/assets/Singapur2.jpg" alt="Imagen 3"></div>
+                <div class="slide-ticker"><img src="/assets/Thailand3.jpg" alt="Imagen 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container-main">
+
+        <!-- ARTÍCULOS - CARDS -->
+        <section class="features">
+
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front glass front-img-1">
+                        <h3>✈️ MEJORES TIPS DE VIAJES ✈️</h3>
+                    </div>
+                    <div class="card-back glass back-img-1">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quas magnam accusantium fugit odit
+                            quidem.</p>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="feature-card">
+                <div class="card-inner"> 
+                    <div class="card-front glass front-img-2">
+                        <h3>DIFERENCIAS ENTRE SANTUARIOS Y TEMPLOS 🏯</h3>
+                    </div>
+                    <div class="card-back glass back-img-2">
+                        <a href="santuarios.html" class="card-link" target="blank">
+                            <p>¿Sabes diferenciar un santuario budista de uno sintoísta? Aquí te lo explico.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front glass front-img-3">
+                        <h3>GUÍA DE SHINKANSEN 🚆</h3>
+                    </div>
+                    <div class="card-back glass back-img-3">
+                        <a href="trenes.html" class="card-link" target="blank">
+                        <p>日本で新幹線で移動するために必要なものはすべて簡単で分かりやすいです。</p>
+                        <p>Nihon de shinkansen de idō suru tame ni hitsuyōnamono wa subete kantande wakari yasuidesu.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front glass front-img-4">
+                        <h3>MEJORES PLAYAS DIVING 🤿</h3>
+                    </div>
+                    <div class="card-back glass back-img-4">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, consequuntur..</p>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front glass front-img-5">
+                        <h3>MEJORES PUNTOS DE ACAMPADA ⛺️</h3>
+                    </div>
+                    <div class="card-back glass back-img-5">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, corporis!.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front glass front-img-6">
+                        <h3>PARQUES DE ATRACCIONES 🎡</h3>
+                    </div>
+                    <div class="card-back glass back-img-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quaerat..</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <aside class="contact-aside">
+            <h2>Contacto y Dudas</h2>
+            <form class="contact-form" action="https://formspree.io/f/xrbrvzrq" method="POST">
+                <p>Nombre:</p>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+
+                <p>Correo electrónico:</p>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+
+                <p>Asunto:</p>
+                <select id="subject" name="subject" required>
+                    <option value="">Selecciona un asunto</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="duda">Duda</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <p>Mensaje:</p>
+                <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje..." required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>© 2025 CROSS ASIA HUB (Final Project 1ª Evaluación LLMM) — Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
